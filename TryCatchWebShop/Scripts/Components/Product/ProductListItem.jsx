@@ -15,10 +15,4 @@
 
         );
     },
-
-    addToCart: function (id) {
-        
-        CartEvents.addProduct(id);
-    }
-
 });

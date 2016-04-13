@@ -17,7 +17,7 @@ var Cart = React.createClass({
         this.setState({ items: items });
     },
 
-    btnPurchaseClick: function() {
+    btnEmptyClick: function () {
 
         Cookies.remove('products');
         this.setState({ items: [] });
@@ -33,9 +33,19 @@ var Cart = React.createClass({
                         className="btn btn-danger" 
                         onClick={this.btnPurchaseClick}
                         disabled={this.state.items.length == 0}
-                        >Buy</button>
-            </div>
+                        data-toggle="modal" data-target="#order-modal"
+                        >Check Out</button>
+                <button type="button"
+                        className="btn btn-default"
+                        onClick={this.btnEmptyClick}
+                        disabled={this.state.items.length == 0}>
+                    Empty cart
+                </button>
 
+
+                <OrderModal items={this.state.items} />
+
+            </div>
         );
     }
 });

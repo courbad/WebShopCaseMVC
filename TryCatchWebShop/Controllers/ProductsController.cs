@@ -30,6 +30,12 @@ namespace TryCatchWebShop.Controllers
             return products;
         }
 
+        public IEnumerable<ProductVM> GetMany([FromUri] Guid[] ids)
+        {
+            var products = ProductAccessor.Instance.LoadAllProducts().Where(p => ids.Contains(p.Id));
+            return products;
+        }
+
         public ProductVM Get(Guid id)
         {
             return ProductAccessor.Instance.LoadAllProducts().First(p => p.Id == id);
