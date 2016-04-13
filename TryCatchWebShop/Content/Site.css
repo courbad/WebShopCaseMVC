@@ -18,3 +18,7 @@ textarea {
 .paging button.active {
   font-weight: bold;
 }
+.cart #count {
+  font-weight: bold;
+  margin: 0 5px;
+}
