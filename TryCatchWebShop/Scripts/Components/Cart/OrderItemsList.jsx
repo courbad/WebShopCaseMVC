@@ -4,10 +4,6 @@
         return null;
     },
 
-    componentDidMount: function () {
-
-    },
-    
     render: function () {
 
         var items = [];
@@ -15,7 +11,7 @@
         var total = 0;
         this.props.ids.map((id) => {
             var data = $.grep(this.props.itemData, function (p) { return p.id == id; })[0];
-            items.push(<tr key={++key }><td>{data.name}</td><td>{data.price.toFixed(2)}</td></tr>);
+            items.push(<tr key={++key}><td>{data.name}</td><td>{data.price.toFixed(2)}</td></tr>);
             total += data.price;
         })
 

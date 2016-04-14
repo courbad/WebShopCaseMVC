@@ -22,6 +22,7 @@ namespace TryCatchWebShop
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ProductAccessor.Instance.CreateProductXml();
+            CodeFirstConfig.InitDatabase();
 
             HttpConfiguration config = GlobalConfiguration.Configuration;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
