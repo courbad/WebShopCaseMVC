@@ -11,7 +11,7 @@
         var total = 0;
         this.props.ids.map((id) => {
             var data = $.grep(this.props.itemData, function (p) { return p.id == id; })[0];
-            items.push(<tr key={++key}><td>{data.name}</td><td>{data.price.toFixed(2)}</td></tr>);
+            items.push(<tr key={++key}><td>{data.name}</td><td>€&nbsp;{data.price.toFixed(2)}</td></tr>);
             total += data.price;
         })
 
@@ -27,7 +27,7 @@
                 <tfoot>
                     <tr>
                         <td className="text-right">total:</td>
-                        <td><strong>€&nbsp;{total}</strong></td>
+                        <td><strong>€&nbsp;{total.toFixed(2)}</strong></td>
                     </tr>
                 </tfoot>
             </table>

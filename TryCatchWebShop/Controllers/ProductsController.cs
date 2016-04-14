@@ -13,7 +13,7 @@ namespace TryCatchWebShop.Controllers
 {
     public class ProductsController : ApiController
     {
-        public IEnumerable<ProductVM> GetList(uint offset = 0, uint count = 0)
+        public IEnumerable<ProductVM> GetList([FromUri] uint offset = 0, uint count = 0)
         {
             // Normally I would only use IQueryable and convert to a list onlt at the very end, 
             // but we have to read the whole XML file anyway.
@@ -30,13 +30,13 @@ namespace TryCatchWebShop.Controllers
             return products;
         }
 
-        public IEnumerable<ProductVM> GetMany([FromUri] Guid[] ids)
+        public IEnumerable<ProductVM> GetMany([FromUri] string[] ids)
         {
             var products = ProductAccessor.Instance.LoadAllProducts().Where(p => ids.Contains(p.Id));
             return products;
         }
 
-        public ProductVM Get(Guid id)
+        public ProductVM Get([FromUri] string id)
         {
             return ProductAccessor.Instance.LoadAllProducts().First(p => p.Id == id);
         }

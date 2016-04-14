@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace TryCatchWebShop.Models
 {
     [XmlType("Product")]
     public class ProductVM
     {
-        public ProductVM()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        public Guid Id { get; set; }  // In an actual webshop it would be more google friendly ID
-        public String Name { get; set; }
+        // I switched to this because newly created guids on app start don't match products in the cart anymore
+        // In an actual webshop it would a more refined approach with google friendly IDs
+        public string Id { get; set; }
+        public string Name { get; set; }
         public decimal Price { get; set; }
     }
 }

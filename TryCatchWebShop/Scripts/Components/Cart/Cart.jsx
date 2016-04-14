@@ -18,9 +18,13 @@ var Cart = React.createClass({
     },
 
     btnEmptyClick: function () {
+        this.empty();
+    },
+
+    empty: function(){
 
         Cookies.remove('products');
-        this.setState({ items: [] });
+        this.setState({ items: [] });    
     },
 
     render: function () {

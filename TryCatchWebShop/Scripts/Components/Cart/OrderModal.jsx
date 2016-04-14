@@ -22,6 +22,12 @@ var OrderModal = React.createClass({
         });
     },
 
+    btnConfirmClick: function() {
+        $('#product-list-container').fadeOut(400, () => {
+            window.orderForm = ReactDOM.render(<OrderForm />, $('#order-form-container')[0]);
+        });
+    },
+
     render: function () {
 
         return (
@@ -37,7 +43,7 @@ var OrderModal = React.createClass({
                           loading....
                       </div>
                       <div className="modal-footer">
-                          <button type="button" className="btn btn-success" onClick={this.btnConfirmClick}>Confirm</button>
+                          <button type="button" className="btn btn-success" data-dismiss="modal" onClick={this.btnConfirmClick}>Confirm</button>
                           <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
                       </div>
                     </div>
