@@ -4,8 +4,6 @@
         return { saved: false };
     },
     
-    
-
     btnSubmitClick: function () {
 
         var that = this;
@@ -69,10 +67,6 @@
         }
     },
 
-    validate: function() {
-        return true;
-    },
-
     getFormData: function () {
         var data = {};
         $('#order-form input').each((i, elem) => {
@@ -85,7 +79,6 @@
     render: function () {
 
         return ( 
-            
 
             <form id="order-form">
               <div className="form-group">
@@ -120,8 +113,10 @@
                 <label className="control-label" htmlFor="email">Email address</label>
                 <input type="email" className="form-control" placeholder="@" id="email" />
               </div>
-              <button type="button" className="btn btn-success" id="btnSubmit" onClick={this.btnSubmitClick}>Submit</button>
-              <button type="button" className="btn btn-default" id="btnCancel" onClick={this.btnCancelClick}>Cancel</button>
+              <div className="button-area">
+                  <button type="button" className="btn btn-success" id="btnSubmit" onClick={this.btnSubmitClick}>Submit</button>
+                  <button type="button" className="btn btn-default" id="btnCancel" onClick={this.btnCancelClick}>Cancel</button>
+              </div>
             </form>
         );
     }

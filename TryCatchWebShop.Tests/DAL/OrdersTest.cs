@@ -19,7 +19,7 @@ namespace TryCatchWebShop.Tests.DAL
                 Id = Guid.NewGuid(),
                 Address = "addrezs",
                 City = "riga",
-                EMail = "adsf@adfs.com",
+                Email = "adsf@adfs.com",
                 FirstName = "maris",
                 LastName = "also maris",
                 HouseNumber = "666",

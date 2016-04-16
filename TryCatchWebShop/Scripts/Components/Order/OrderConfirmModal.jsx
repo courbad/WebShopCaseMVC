@@ -24,7 +24,7 @@ var OrderConfirmModal = React.createClass({
                 ids: ids.filter((value, index, self) => { return self.indexOf(value) == index })  // only uniques
             }, 
         }).done(function (data) {
-            ReactDOM.render(<OrderItemsList itemData={data} ids={ids} />, $('#order-modal .modal-body')[0]);
+            ReactDOM.render(<OrderConfirmList itemData={data} ids={ids} />, $('#order-modal .modal-body')[0]);
         });
     },
 

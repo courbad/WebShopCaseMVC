@@ -46,7 +46,7 @@ var ProductList = React.createClass({
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th className="text-right">Price</th>
+                        <th className="text-right">Price (ex. VAT)</th>
                         <th></th>
                     </tr>
                 </thead>

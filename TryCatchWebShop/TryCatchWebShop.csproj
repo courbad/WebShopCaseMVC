@@ -368,7 +368,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\Components\Cart\Cart.jsx" />
-    <Content Include="Scripts\Components\Order\OrderConfirmItemsList.jsx" />
+    <Content Include="Scripts\Components\Order\OrderConfirmList.jsx" />
+    <Content Include="Scripts\Components\Order\OrderConfirmListItem.jsx" />
     <Content Include="Scripts\Components\Order\OrderConfirmModal.jsx" />
     <Content Include="Scripts\Components\Order\OrderForm.jsx" />
     <Content Include="Scripts\Components\Product\Paging.jsx" />

@@ -15,11 +15,12 @@ textarea {
     max-width: 280px;
 }
 
+@default-margin: 5px;
 
 .paging {
 
     button {
-        margin: 0 5px;
+        margin: 0 @default-margin;
 
         &.active {
             font-weight: bold;
@@ -30,10 +31,16 @@ textarea {
 .cart {
     #count {
         font-weight: bold;
-        margin: 0 5px;
+        margin: 0 @default-margin;
     }
 
     button {
-        margin: 0 5px;
+        margin: 0 @default-margin;
+    }
+}
+
+#order-form {
+    .button-area button {
+        margin-right: @default-margin;
     }
 }
