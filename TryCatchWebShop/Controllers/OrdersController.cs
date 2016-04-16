@@ -12,14 +12,15 @@ namespace TryCatchWebShop.Controllers
     {
         private WebShopContext _db = new WebShopContext();
 
-        public IHttpActionResult PostOrder(OrderVM order)
+        public IHttpActionResult PostOrder(OrderVM orderVM)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.Orders.Add(CreateFromView(order));
+            var order = CreateFromView(orderVM);
+            _db.Orders.Add(order);
 
             try
             {
@@ -30,7 +31,7 @@ namespace TryCatchWebShop.Controllers
                 return BadRequest(ex.Message);
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = order.Id }, order);
+            return Ok(new { Id = order.Id });
         }
 
         private Order CreateFromView(OrderVM viewModel)
@@ -41,8 +42,8 @@ namespace TryCatchWebShop.Controllers
             var productCfg = new MapperConfiguration(cfg => cfg.CreateMap<ProductVM, Product>());
             var productMapper = productCfg.CreateMapper();
 
-            var order = new Order();
-            order = orderMapper.Map<Order>(viewModel);
+            var order = orderMapper.Map<Order>(viewModel);
+            order.Id = Guid.NewGuid();
 
             // didn't want to sophisticate with join and grouping, so I left flattened collection
             IEnumerable<ProductVM> products = ProductAccessor.Instance.LoadAllProducts()

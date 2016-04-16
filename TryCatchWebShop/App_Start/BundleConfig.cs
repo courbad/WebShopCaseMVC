@@ -1,4 +1,6 @@
-﻿using System.Web.Optimization;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Optimization;
 using System.Web.Optimization.React;
 
 namespace TryCatchWebShop
@@ -23,11 +25,11 @@ namespace TryCatchWebShop
                       "~/Scripts/common.js"));
 
 
-            //bundles.Add(new BabelBundle("~/bundles/components/product")
-            //    .IncludeDirectory("~/Scripts/Components/Product", "*.jsx"));
-
-            //        bundles.Add(new ScriptBundle("~/bundles/components/product")
-            //.IncludeDirectory("~/Scripts/Components/Product", "*.js"));
+            bundles.Add(new BabelBundle("~/bundles/components")
+                .IncludeDirectory("~/Scripts/Components/Product", "*.jsx")
+                .IncludeDirectory("~/Scripts/Components/Cart", "*.jsx")
+                .IncludeDirectory("~/Scripts/Components/Order", "*.jsx")
+                .Include("~/Scripts/Components/Home.jsx"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

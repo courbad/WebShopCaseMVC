@@ -235,7 +235,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\CodeFirstConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\ReactConfig.cs" />
@@ -369,9 +368,9 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\Components\Cart\Cart.jsx" />
-    <Content Include="Scripts\Components\Cart\OrderItemsList.jsx" />
-    <Content Include="Scripts\Components\Cart\OrderModal.jsx" />
-    <Content Include="Scripts\Components\OrderForm\OrderForm.jsx" />
+    <Content Include="Scripts\Components\Order\OrderConfirmItemsList.jsx" />
+    <Content Include="Scripts\Components\Order\OrderConfirmModal.jsx" />
+    <Content Include="Scripts\Components\Order\OrderForm.jsx" />
     <Content Include="Scripts\Components\Product\Paging.jsx" />
     <Content Include="Scripts\Components\Product\PagingButton.jsx" />
     <Content Include="Scripts\jquery-1.10.2.js" />

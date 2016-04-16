@@ -35,7 +35,6 @@ var Cart = React.createClass({
                 <p className="count"><span id="count">({this.state.items.length})</span>items in cart</p>
                 <button type="button" 
                         className="btn btn-danger" 
-                        onClick={this.btnPurchaseClick}
                         disabled={this.state.items.length == 0}
                         data-toggle="modal" data-target="#order-modal"
                         >Check Out</button>
@@ -45,10 +44,6 @@ var Cart = React.createClass({
                         disabled={this.state.items.length == 0}>
                     Empty cart
                 </button>
-
-
-                <OrderModal items={this.state.items} />
-
             </div>
         );
     }

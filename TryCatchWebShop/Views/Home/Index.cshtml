@@ -1,20 +1,7 @@
 ﻿@section scripts
 {
-    @*
-<script type="text/javascript" src="~/bundles/components/product"></script> babelbundle y u no work? *@
-
-<script type="text/javascript" src="~/Scripts/Components/Product/ProductListItem.jsx"></script>
-<script type="text/javascript" src="~/Scripts/Components/Product/PagingButton.jsx"></script>
-<script type="text/javascript" src="~/Scripts/Components/Product/Paging.jsx"></script>
-<script type="text/javascript" src="~/Scripts/Components/Product/ProductList.jsx"></script>
-<script type="text/javascript" src="~/Scripts/Components/OrderForm/OrderForm.jsx"></script>
-<script type="text/javascript" src="~/Scripts/Components/Cart/Cart.jsx"></script>
-<script type="text/javascript" src="~/Scripts/Components/Cart/OrderItemsList.jsx"></script>
-<script type="text/javascript" src="~/Scripts/Components/Cart/OrderModal.jsx"></script>
-
-<script type="text/javascript" src="~/Scripts/Components/Home.jsx"></script>
+    @Scripts.Render("~/bundles/components")
 }
-
 
 <div class="container-fluid">
     <div class="row">
@@ -24,6 +11,7 @@
         </div>
         <div class="col-md-4">
             <div id="cart-container"></div>
+            <div id="confirmation-modal-container"></div>
         </div>        
     </div>
 </div>

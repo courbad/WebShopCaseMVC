@@ -1,28 +1,34 @@
 ﻿
-var OrderModal = React.createClass({
+var OrderConfirmModal = React.createClass({
    
     getInitialState: function () {
-        return { items: [] };
+        return null;
     },
 
     componentDidMount: function () {
 
+        var that = this;
+        $('#order-modal').on('show.bs.modal', (e) => {
+            that.loadItems();
+        })
+    },
+
+    loadItems: function () {
+
         var ids = Cookies.getJSON('products') || [];
         var that = this;
-        $('#order-modal').on('show.bs.modal', function (e) {
-            $.ajax({
-                dataType: "json",
-                url: '/api/Products/GetMany',
-                data: { 
-                    ids: ids.filter((value, index, self) => { return self.indexOf(value) == index })  // only uniques
-                }, 
-            }).done(function (data) {
-                ReactDOM.render(<OrderItemsList itemData={data} ids={ids} />, $('#order-modal .modal-body')[0]);
-            });
+        $.ajax({
+            dataType: "json",
+            url: '/api/Products/GetMany',
+            data: { 
+                ids: ids.filter((value, index, self) => { return self.indexOf(value) == index })  // only uniques
+            }, 
+        }).done(function (data) {
+            ReactDOM.render(<OrderItemsList itemData={data} ids={ids} />, $('#order-modal .modal-body')[0]);
         });
     },
 
-    btnConfirmClick: function() {
+    btnConfirmClick: function () {
         $('#product-list-container').fadeOut(400, () => {
             window.orderForm = ReactDOM.render(<OrderForm />, $('#order-form-container')[0]);
         });
@@ -44,12 +50,11 @@ var OrderModal = React.createClass({
                       </div>
                       <div className="modal-footer">
                           <button type="button" className="btn btn-success" data-dismiss="modal" onClick={this.btnConfirmClick}>Confirm</button>
-                          <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
+                          <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.btnCancelClick}>Cancel</button>
                       </div>
                     </div>
                   </div>
                 </div>
-
 
             );
     }

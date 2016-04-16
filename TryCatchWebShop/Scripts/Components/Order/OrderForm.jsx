@@ -6,16 +6,15 @@
     
     
 
-    btnPurchaseClick: function () {
+    btnSubmitClick: function () {
 
         var that = this;
+        $('#btnSubmit').prop('disabled', true);
         this.clearErrors();
 
         var order = this.getFormData();
         order.productIds = Cookies.getJSON('products');
 
-        console.log(order.products);
-        
         $.ajax({
             dataType: "json",
             url: '/api/Orders/PostOrder',
@@ -24,11 +23,14 @@
 
         }).done(function (data) {
 
-            console.log('success');
             Cookies.remove('products');
             window.cart.empty();
             ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(that).parentNode);
             $('.body-content').prepend($('<div>', { class: 'alert alert-success', text: 'Thank you! Your purchases will be at your doorstep shortly.' }));
+
+        }).always(function (data) {
+
+            $('#btnSubmit').prop('disabled', false);
 
         }).error(function (data) {
                 
@@ -39,9 +41,7 @@
                 alert(data.message || 'Error saving order.');
                 console.log(data);
             }
-
         });
-        
     },
 
     displayErrors: function (messages) {
@@ -120,8 +120,8 @@
                 <label className="control-label" htmlFor="email">Email address</label>
                 <input type="email" className="form-control" placeholder="@" id="email" />
               </div>
-              <button type="button" className="btn btn-success" onClick={this.btnPurchaseClick}>Submit</button>
-              <button type="button" className="btn btn-default" onClick={this.btnCancelClick}>Cancel</button>
+              <button type="button" className="btn btn-success" id="btnSubmit" onClick={this.btnSubmitClick}>Submit</button>
+              <button type="button" className="btn btn-default" id="btnCancel" onClick={this.btnCancelClick}>Cancel</button>
             </form>
         );
     }
