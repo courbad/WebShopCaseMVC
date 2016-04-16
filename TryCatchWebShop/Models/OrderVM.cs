@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,15 +8,37 @@ namespace TryCatchWebShop.Models
 {
     public class OrderVM
     {
-        public string Title { get; set; }  
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string HouseNumber { get; set; }
-        public string ZipCode { get; set; }
-        public string City { get; set; }
-        public string EMail { get; set; }
+        public Guid Id { get; set; }
 
-        public IEnumerable<Guid> ProductIds { get; set; }
+        [StringLength(10)]
+        public string Title { get; set; }
+
+        [Required, StringLength(66)]
+        public string FirstName { get; set; }
+
+        [Required, StringLength(66)]
+        public string LastName { get; set; }
+
+        [Required, StringLength(66)]
+        public string Address { get; set; }
+
+        [StringLength(10)]
+        public string HouseNumber { get; set; }
+
+        [Required]
+        [DataType(DataType.PostalCode)]
+        [StringLength(12)]
+        public string ZipCode { get; set; }
+
+        [Required, StringLength(24)]
+        public string City { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [StringLength(100)]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        public IEnumerable<string> ProductIds { get; set; }
     }
 }

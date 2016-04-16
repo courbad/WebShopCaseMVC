@@ -51,7 +51,7 @@ var OrderModal = React.createClass({
                 </div>
 
 
-);
+            );
     }
 });
 

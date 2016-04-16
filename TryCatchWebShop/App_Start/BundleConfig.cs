@@ -19,9 +19,10 @@ namespace TryCatchWebShop
                       "~/Scripts/respond.js",
                       "~/Scripts/react/react.js",
                       "~/Scripts/react/react-dom.js",
-                      "~/Scripts/js.cookie.js"));
+                      "~/Scripts/js.cookie.js",
+                      "~/Scripts/common.js"));
 
-            
+
             //bundles.Add(new BabelBundle("~/bundles/components/product")
             //    .IncludeDirectory("~/Scripts/Components/Product", "*.jsx"));
 

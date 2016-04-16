@@ -7,29 +7,65 @@
     
 
     btnPurchaseClick: function () {
-        if (this.validate()) {
 
-            $.ajax({
-                dataType: "json",
-                url: '/api/Orders/Insert',
-                method: 'post',
-                data: {
-                    firstName: 'todo'
-                },
-            }).done(function (data) {
-                alert('Thank you! Your purchases will be at your doorstep shortly.');
-            }).error(function (data) {
-                console.log('something went wrong');
-            });
+        var that = this;
+        this.clearErrors();
+
+        var order = this.getFormData();
+        order.productIds = Cookies.getJSON('products');
+
+        console.log(order.products);
+        
+        $.ajax({
+            dataType: "json",
+            url: '/api/Orders/PostOrder',
+            method: 'post',
+            data: order
+
+        }).done(function (data) {
+
+            console.log('success');
+            Cookies.remove('products');
+            window.cart.empty();
+            ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(that).parentNode);
+            $('.body-content').prepend($('<div>', { class: 'alert alert-success', text: 'Thank you! Your purchases will be at your doorstep shortly.' }));
+
+        }).error(function (data) {
+                
+            var messages;
+            if (data.responseJSON.modelState !== undefined) {
+                that.displayErrors(data.responseJSON.modelState);
+            } else {
+                alert(data.message || 'Error saving order.');
+                console.log(data);
+            }
+
+        });
+        
+    },
+
+    displayErrors: function (messages) {
+
+        for (var propertyName in messages) {
+
+            var input = $('#' + camelize(propertyName.substring(6)), $('#order-form'));
+            input.closest('.form-group')
+                .addClass('has-error')
+                .append($('<p>', { class: 'error', text: messages[propertyName].join(' ') }));
         }
+    },
+
+    clearErrors: function () {
+        $('#order-form .form-group')
+            .removeClass('has-error')
+            .find('p.error').remove();
     },
 
     btnCancelClick: function () {
 
-        // this is cheap, but I hope it's ok for a test assessment
         if (confirm('Are you sure you want to cancel this order?')) {
-            window.cart.empty();
-            document.location.href = '/';
+            ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
+            $('#product-list-container').fadeIn();
         }
     },
 
@@ -37,38 +73,51 @@
         return true;
     },
 
+    getFormData: function () {
+        var data = {};
+        $('#order-form input').each((i, elem) => {
+            data[elem.id] = elem.value;
+        });
+
+        return data;
+    },
+
     render: function () {
 
         return ( 
             
 
-            <form>
+            <form id="order-form">
               <div className="form-group">
-                <label htmlFor="title">Title</label>
+                <label className="control-label" htmlFor="title">Title</label>
                 <input type="text" className="form-control" id="title" />
               </div>
               <div className="form-group">
-                <label htmlFor="firstName">First Name</label>
+                <label className="control-label" htmlFor="firstName">First Name</label>
                 <input type="text" className="form-control" id="firstName" />
               </div>
               <div className="form-group">
-                <label htmlFor="lastName">Last Name</label>
+                <label className="control-label" htmlFor="lastName">Last Name</label>
                 <input type="text" className="form-control" id="lastName" />
               </div>
               <div className="form-group">
-                <label htmlFor="address">Address</label>
+                <label className="control-label" htmlFor="address">Address</label>
                 <input type="text" className="form-control" id="address" />
               </div>
               <div className="form-group">
-                <label htmlFor="houseNumber">House Number</label>
+                <label className="control-label" htmlFor="houseNumber">House Number</label>
                 <input type="text" className="form-control" id="houseNumber" />
               </div>
               <div className="form-group">
-                <label htmlFor="city">City</label>
+                <label className="control-label" htmlFor="city">City</label>
                 <input type="text" className="form-control" id="city" />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email address</label>
+                <label className="control-label" htmlFor="zipCode">Zip Code</label>
+                <input type="text" className="form-control" id="zipCode" />
+              </div>
+              <div className="form-group">
+                <label className="control-label" htmlFor="email">Email address</label>
                 <input type="email" className="form-control" placeholder="@" id="email" />
               </div>
               <button type="button" className="btn btn-success" onClick={this.btnPurchaseClick}>Submit</button>

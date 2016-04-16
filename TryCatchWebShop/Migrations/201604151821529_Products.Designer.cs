@@ -7,13 +7,13 @@ namespace TryCatchWebShop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class _201604140606071_InitialCreate : IMigrationMetadata
+    public sealed partial class Products : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(_201604140606071_InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Products));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604140637054_201604140606071_InitialCreate"; }
+            get { return "201604151821529_Products"; }
         }
         
         string IMigrationMetadata.Source
