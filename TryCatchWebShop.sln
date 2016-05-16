@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatchWebShop", "TryCatchWebShop\TryCatchWebShop.csproj", "{EE01ECCF-AFC3-4929-80A3-54CD1FB76715}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Web.Shop", "TryCatchWebShop\TryCatch.Web.Shop.csproj", "{EE01ECCF-AFC3-4929-80A3-54CD1FB76715}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatchWebShop.Tests", "TryCatchWebShop.Tests\TryCatchWebShop.Tests.csproj", "{CF54A5B8-2D74-4420-A6D7-C3D12F11637F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Tests", "TryCatchWebShop.Tests\TryCatch.Tests.csproj", "{CF54A5B8-2D74-4420-A6D7-C3D12F11637F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Lib.DTO", "TryCatch.Lib.DTO\TryCatch.Lib.DTO.csproj", "{3CC559D7-6F5D-46A5-8DAF-FF55A49A4EA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Lib.Services", "TryCatch.Lib.Services\TryCatch.Lib.Services.csproj", "{F48A49FA-14D1-4A78-BA05-6A5F0512F583}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Lib.BLL", "TryCatch.Lib.BLL\TryCatch.Lib.BLL.csproj", "{B7D25888-5A26-4090-8BC4-C4D33AC1616D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{CF54A5B8-2D74-4420-A6D7-C3D12F11637F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF54A5B8-2D74-4420-A6D7-C3D12F11637F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF54A5B8-2D74-4420-A6D7-C3D12F11637F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CC559D7-6F5D-46A5-8DAF-FF55A49A4EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC559D7-6F5D-46A5-8DAF-FF55A49A4EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC559D7-6F5D-46A5-8DAF-FF55A49A4EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC559D7-6F5D-46A5-8DAF-FF55A49A4EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F48A49FA-14D1-4A78-BA05-6A5F0512F583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F48A49FA-14D1-4A78-BA05-6A5F0512F583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F48A49FA-14D1-4A78-BA05-6A5F0512F583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F48A49FA-14D1-4A78-BA05-6A5F0512F583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D25888-5A26-4090-8BC4-C4D33AC1616D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D25888-5A26-4090-8BC4-C4D33AC1616D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D25888-5A26-4090-8BC4-C4D33AC1616D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D25888-5A26-4090-8BC4-C4D33AC1616D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

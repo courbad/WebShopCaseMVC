@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace TryCatchWebShop.Areas.HelpPage
+namespace TryCatch.Web.Shop.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

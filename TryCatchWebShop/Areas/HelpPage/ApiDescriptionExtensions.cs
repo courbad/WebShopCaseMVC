@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace TryCatchWebShop.Areas.HelpPage
+namespace TryCatch.Web.Shop.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

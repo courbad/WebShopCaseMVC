@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using TryCatchWebShop.Areas.HelpPage.ModelDescriptions;
-using TryCatchWebShop.Areas.HelpPage.Models;
+using TryCatch.Web.Shop.Areas.HelpPage.ModelDescriptions;
+using TryCatch.Web.Shop.Areas.HelpPage.Models;
 
-namespace TryCatchWebShop.Areas.HelpPage
+namespace TryCatch.Web.Shop.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace TryCatchWebShop.Areas.HelpPage.ModelDescriptions
+namespace TryCatch.Web.Shop.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

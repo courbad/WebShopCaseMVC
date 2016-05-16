@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web.Optimization;
 using System.Web.Optimization.React;
 
-namespace TryCatchWebShop
+namespace TryCatch.Web.Shop
 {
     public class BundleConfig
     {
@@ -19,6 +19,7 @@ namespace TryCatchWebShop
                       "~/Scripts/jquery-{version}.js",
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
+                      "~/Scripts/lodash.js",
                       "~/Scripts/react/react.js",
                       "~/Scripts/react/react-dom.js",
                       "~/Scripts/js.cookie.js",

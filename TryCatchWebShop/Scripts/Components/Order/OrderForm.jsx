@@ -30,10 +30,11 @@
 
             $('#btnSubmit').prop('disabled', false);
 
-        }).error(function (data) {
-                
-            var messages;
-            if (data.responseJSON.modelState !== undefined) {
+        }).fail(function (data) {
+            
+            console.log('why?');
+
+            if (_.has(data, 'responseJSON.modelState')) {
                 that.displayErrors(data.responseJSON.modelState);
             } else {
                 alert(data.message || 'Error saving order.');

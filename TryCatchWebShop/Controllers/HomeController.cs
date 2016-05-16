@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace TryCatchWebShop.Controllers
+namespace TryCatch.Web.Shop.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,8 +1,8 @@
 using React;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(TryCatchWebShop.ReactConfig), "Configure")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(TryCatch.Web.Shop.ReactConfig), "Configure")]
 
-namespace TryCatchWebShop
+namespace TryCatch.Web.Shop
 {
 	public static class ReactConfig
 	{

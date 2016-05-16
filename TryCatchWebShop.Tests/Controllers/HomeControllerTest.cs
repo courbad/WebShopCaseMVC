@@ -1,9 +1,8 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TryCatchWebShop;
-using TryCatchWebShop.Controllers;
+using TryCatch.Web.Shop.Controllers;
 
-namespace TryCatchWebShop.Tests.Controllers
+namespace TryCatch.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest

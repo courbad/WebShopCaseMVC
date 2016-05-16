@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace TryCatchWebShop.Areas.HelpPage.ModelDescriptions
+namespace TryCatch.Web.Shop.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

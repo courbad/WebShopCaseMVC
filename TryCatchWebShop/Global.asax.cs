@@ -1,15 +1,13 @@
 ﻿using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using TryCatchWebShop.DAL;
+using TryCatch.Lib.BLL;
+using TryCatch.Web.Shop.Controllers;
 
-namespace TryCatchWebShop
+namespace TryCatch.Web.Shop
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
@@ -17,17 +15,30 @@ namespace TryCatchWebShop
         {
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            FilterConfig.RegisterHttpFilters(GlobalConfiguration.Configuration.Filters);
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            ProductAccessor.Instance.CreateProductXml();
-
+            ProductRepositoryConfig.Init();
+            UnityConfig.RegisterComponents();
 
             HttpConfiguration config = GlobalConfiguration.Configuration;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
+
         }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exception = Server.GetLastError();
+
+            
+        }
+
+
     }
 }
 

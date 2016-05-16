@@ -1,72 +1,59 @@
-﻿using AutoMapper;
-using System;
+﻿using System.Linq;
 using System.Collections.Generic;
-using System.Linq;
+using OrderViewModel = TryCatch.Web.ViewModels.Order;
+using ProductViewModel = TryCatch.Web.ViewModels.Product;
+using OrderDTO = TryCatch.Lib.DTO.Order;
+using ProductDTO = TryCatch.Lib.DTO.Product;
+using TryCatch.Lib.BLL;
+using AutoMapper;
 using System.Web.Http;
-using TryCatchWebShop.DAL;
-using TryCatchWebShop.Models;
 
-namespace TryCatchWebShop.Controllers
+namespace TryCatch.Web.Shop.Controllers
 {
     public class OrdersController : ApiController
     {
-        private WebShopContext _db = new WebShopContext();
+        private IOrdersBLL _ordersBLL;
+        private IProductsBLL _productsBLL;
 
-        public IHttpActionResult PostOrder(OrderVM orderVM)
+        public OrdersController(IOrdersBLL ordersBLL, IProductsBLL productsBLL )
+        {
+            _ordersBLL = ordersBLL;
+            _productsBLL = productsBLL;
+        }
+
+        [HttpPost]
+        public IHttpActionResult PostOrder([FromBody] OrderViewModel order)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var order = CreateFromView(orderVM);
-            _db.Orders.Add(order);
+            _ordersBLL.Create(CreateFromView(order));
 
-            try
-            {
-                _db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
-            return Ok(new { Id = order.Id });
+            return Ok(new { }); // empty object to please jQuery
         }
 
-        private Order CreateFromView(OrderVM viewModel)
+        private OrderDTO CreateFromView(OrderViewModel viewModel)
         {
-            var orderCfg = new MapperConfiguration(cfg => cfg.CreateMap<OrderVM, Order>());
+            var orderCfg = new MapperConfiguration(cfg => cfg.CreateMap<OrderViewModel, OrderDTO>());
             var orderMapper = orderCfg.CreateMapper();
 
-            var productCfg = new MapperConfiguration(cfg => cfg.CreateMap<ProductVM, Product>());
-            var productMapper = productCfg.CreateMapper();
+            //var productCfg = new MapperConfiguration(cfg => cfg.CreateMap<ProductViewModel, ProductDTO>());
+            //var productMapper = productCfg.CreateMapper();
 
-            var order = orderMapper.Map<Order>(viewModel);
-            order.Id = Guid.NewGuid();
+            var order = orderMapper.Map<OrderDTO>(viewModel);
 
-            // didn't want to sophisticate with join and grouping, so I left flattened collection
-            IEnumerable<ProductVM> products = ProductAccessor.Instance.LoadAllProducts()
-                .Where(p => viewModel.ProductIds.Contains(p.Id));
+            var productInfo = _productsBLL.GetManyById(viewModel.ProductIds);
 
-            order.Products = productMapper.Map<IEnumerable<Product>>(products) as ICollection<Product>;
-
-            // set fields not covered by mapper
-            (order.Products as List<Product>).ForEach(p =>
+            order.Products = new List<ProductDTO>();
+            foreach (string id in viewModel.ProductIds)
             {
-                p.Count = viewModel.ProductIds.Count(id => id == p.Id);
-            });
+                //productMapper.Map<ProductDTO>(entity)
+                order.Products.Add(productInfo.First(p => p.Id == id));
+            }
 
             return order;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

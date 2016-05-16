@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace TryCatchWebShop.Areas.HelpPage.ModelDescriptions
+namespace TryCatch.Web.Shop.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

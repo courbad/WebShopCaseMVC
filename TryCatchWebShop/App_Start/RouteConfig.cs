@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace TryCatchWebShop
+namespace TryCatch.Web.Shop
 {
     public class RouteConfig
     {

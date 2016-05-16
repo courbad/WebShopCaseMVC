@@ -1,6 +1,6 @@
 using System;
 
-namespace TryCatchWebShop.Areas.HelpPage.ModelDescriptions
+namespace TryCatch.Web.Shop.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.

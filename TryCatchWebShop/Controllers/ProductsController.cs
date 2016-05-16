@@ -1,51 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web;
+﻿using System.Collections.Generic;
+using TryCatch.Lib.DTO;
+using TryCatch.Lib.BLL;
 using System.Web.Http;
-using TryCatchWebShop.DAL;
-using TryCatchWebShop.Models;
 
-namespace TryCatchWebShop.Controllers
+namespace TryCatch.Web.Shop.Controllers
 {
     public class ProductsController : ApiController
     {
-        public IEnumerable<ProductVM> GetList([FromUri] uint offset = 0, uint count = 0)
+        private IProductsBLL _productsBLL;
+
+        public ProductsController(IProductsBLL productsBLL)
         {
-            // Normally I would only use IQueryable and convert to a list onlt at the very end, 
-            // but we have to read the whole XML file anyway.
-
-            var products = ProductAccessor.Instance.LoadAllProducts()
-                .OrderBy(p => p.Price)
-                .Skip((int)offset);
-
-            if (count > 0)
-            {
-                products = products.Take(count > 0 ? (int)count : 10); // Normally count would be taken from UI or default value from config
-            }
-
-            return products;
+            _productsBLL = productsBLL;
         }
 
-        public IEnumerable<ProductVM> GetMany([FromUri] string[] ids)
+        [HttpGet]
+        public IEnumerable<Product> GetList(uint offset = 0, uint count = 0)
         {
-            var products = ProductAccessor.Instance.LoadAllProducts().Where(p => ids.Contains(p.Id));
-            return products;
+            return _productsBLL.GetList((int)offset, (int)count);
         }
 
-        public ProductVM Get([FromUri] string id)
+        [HttpGet]
+        public IEnumerable<Product> GetMany([FromUri] string[] ids)
         {
-            return ProductAccessor.Instance.LoadAllProducts().First(p => p.Id == id);
+            return _productsBLL.GetManyById(ids);
         }
 
+        [HttpGet]
+        public Product Get(string id)
+        {
+            return _productsBLL.GetById(id);
+        }
+
+        [HttpGet]
         public int GetTotalCount()
         {
-            return ProductAccessor.Instance.LoadAllProducts().Count();
+            return _productsBLL.GetTotalCount();
         }
-
-
     }
 }

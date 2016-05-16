@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using TryCatchWebShop.Areas.HelpPage.ModelDescriptions;
-using TryCatchWebShop.Areas.HelpPage.Models;
+using TryCatch.Web.Shop.Areas.HelpPage.ModelDescriptions;
+using TryCatch.Web.Shop.Areas.HelpPage.Models;
 
-namespace TryCatchWebShop.Areas.HelpPage.Controllers
+namespace TryCatch.Web.Shop.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.
