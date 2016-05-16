@@ -4,8 +4,6 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using TryCatch.Lib.BLL;
-using TryCatch.Web.Shop.Controllers;
 
 namespace TryCatch.Web.Shop
 {
@@ -34,11 +32,7 @@ namespace TryCatch.Web.Shop
         protected void Application_Error(object sender, EventArgs e)
         {
             Exception exception = Server.GetLastError();
-
-            
         }
-
-
     }
 }
 

@@ -131,5 +131,14 @@ namespace TryCatch.Resources.Views {
                 return ResourceManager.GetString("FieldZip", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you! Your purchases will be at your doorstep shortly..
+        /// </summary>
+        public static string OrderSuccessMessage {
+            get {
+                return ResourceManager.GetString("OrderSuccessMessage", resourceCulture);
+            }
+        }
     }
 }

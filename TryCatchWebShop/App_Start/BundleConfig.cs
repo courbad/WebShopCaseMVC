@@ -27,6 +27,7 @@ namespace TryCatch.Web.Shop
 
 
             bundles.Add(new BabelBundle("~/bundles/components")
+                .IncludeDirectory("~/Scripts/Components/Common", "*.jsx")
                 .IncludeDirectory("~/Scripts/Components/Product", "*.jsx")
                 .IncludeDirectory("~/Scripts/Components/Cart", "*.jsx")
                 .IncludeDirectory("~/Scripts/Components/Order", "*.jsx")

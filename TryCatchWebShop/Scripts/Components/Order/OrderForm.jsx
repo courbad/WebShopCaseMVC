@@ -24,7 +24,7 @@
             Cookies.remove('products');
             window.cart.empty();
             ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(that).parentNode);
-            $('.body-content').prepend($('<div>', { class: 'alert alert-success', text: 'Thank you! Your purchases will be at your doorstep shortly.' }));
+            ReactDOM.render(<SuccessMessage text={Resources.orderForm.successMsg} />, $('.body-content')[0]);
 
         }).always(function (data) {
 

@@ -141,4 +141,7 @@
   <data name="FieldZip" xml:space="preserve">
     <value>Zip Code</value>
   </data>
+  <data name="OrderSuccessMessage" xml:space="preserve">
+    <value>Thank you! Your purchases will be at your doorstep shortly.</value>
+  </data>
 </root>
