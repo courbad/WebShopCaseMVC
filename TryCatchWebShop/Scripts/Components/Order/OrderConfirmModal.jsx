@@ -43,14 +43,14 @@ var OrderConfirmModal = React.createClass({
                     <div className="modal-content">
                       <div className="modal-header">
                         <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 className="modal-title">Confirm Purchase</h4>
+                        <h4 className="modal-title">{Resources.order.confirmPurchase}</h4>
                       </div>
                       <div className="modal-body">
                           loading....
                       </div>
                       <div className="modal-footer">
-                          <button type="button" className="btn btn-success" data-dismiss="modal" onClick={this.btnConfirmClick}>Confirm</button>
-                          <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.btnCancelClick}>Cancel</button>
+                          <button type="button" className="btn btn-success" data-dismiss="modal" onClick={this.btnConfirmClick}>{Resources.common.btnConfirm}</button>
+                          <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.btnCancelClick}>{Resources.common.btnCancel}</button>
                       </div>
                     </div>
                   </div>

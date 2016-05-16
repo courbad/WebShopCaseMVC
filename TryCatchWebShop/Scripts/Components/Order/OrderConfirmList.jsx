@@ -21,16 +21,16 @@
             <table className="table table-condensed order-items-list">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th className="text-right">Price</th>
-                        <th className="text-right">VAT {window.vat * 100}&#37;</th>
-                        <th className="text-right">Price inc. VAT</th>
+                        <th>{Resources.productList.thName}</th>
+                        <th className="text-right">{Resources.productList.thPrice}</th>
+                        <th className="text-right">{Resources.productList.thVat} {window.vat * 100}&#37;</th>
+                        <th className="text-right">{Resources.productList.thPriceIncVat}</th>
                     </tr>
                 </thead>
                 <tbody>{items}</tbody>
                 <tfoot>
                     <tr>
-                        <td className="text-right">total:</td>
+                        <td className="text-right">{Resources.order.total}:</td>
                         <td className="text-right"><strong>€&nbsp;{total.toFixed(2)}</strong></td>
                         <td className="text-right"><strong>€&nbsp;{(total * window.vat).toFixed(2)}</strong></td>
                         <td className="text-right"><strong>€&nbsp;{(total * (1 + window.vat)).toFixed(2)}</strong></td>

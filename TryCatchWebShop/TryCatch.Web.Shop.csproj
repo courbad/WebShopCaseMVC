@@ -313,6 +313,7 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Shared\JsResources.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -409,6 +410,10 @@
     <ProjectReference Include="..\TryCatch.Lib.DTO\TryCatch.Lib.DTO.csproj">
       <Project>{3cc559d7-6f5d-46a5-8daf-ff55a49a4ea0}</Project>
       <Name>TryCatch.Lib.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TryCatch.Resources\TryCatch.Lib.Resources.csproj">
+      <Project>{9c4aadc6-5031-4d40-9435-c859ecbd96f6}</Project>
+      <Name>TryCatch.Lib.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

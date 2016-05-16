@@ -31,18 +31,19 @@ var Cart = React.createClass({
 
         return ( 
             <div className="cart">
-                <p className="text-success"><strong>Shopping cart</strong></p>
-                <p className="count"><span id="count">({this.state.items.length})</span>items in cart</p>
+                <p className="text-success"><strong>{Resources.cart.title}</strong></p>
+                <p className="count"><span id="count">({this.state.items.length})</span>{Resources.cart.itemsInCart}</p>
                 <button type="button" 
                         className="btn btn-danger" 
                         disabled={this.state.items.length == 0}
-                        data-toggle="modal" data-target="#order-modal"
-                        >Check Out</button>
+                        data-toggle="modal" data-target="#order-modal">
+                    {Resources.cart.btnCheckOut}
+                </button>
                 <button type="button"
                         className="btn btn-default"
                         onClick={this.btnEmptyClick}
                         disabled={this.state.items.length == 0}>
-                    Empty cart
+                    {Resources.cart.btnEmptyCart}
                 </button>
             </div>
         );

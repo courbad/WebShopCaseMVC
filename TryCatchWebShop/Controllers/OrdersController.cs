@@ -39,17 +39,12 @@ namespace TryCatch.Web.Shop.Controllers
             var orderCfg = new MapperConfiguration(cfg => cfg.CreateMap<OrderViewModel, OrderDTO>());
             var orderMapper = orderCfg.CreateMapper();
 
-            //var productCfg = new MapperConfiguration(cfg => cfg.CreateMap<ProductViewModel, ProductDTO>());
-            //var productMapper = productCfg.CreateMapper();
-
             var order = orderMapper.Map<OrderDTO>(viewModel);
-
             var productInfo = _productsBLL.GetManyById(viewModel.ProductIds);
 
             order.Products = new List<ProductDTO>();
             foreach (string id in viewModel.ProductIds)
             {
-                //productMapper.Map<ProductDTO>(entity)
                 order.Products.Add(productInfo.First(p => p.Id == id));
             }
 

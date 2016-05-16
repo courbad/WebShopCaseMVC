@@ -32,8 +32,6 @@
 
         }).fail(function (data) {
             
-            console.log('why?');
-
             if (_.has(data, 'responseJSON.modelState')) {
                 that.displayErrors(data.responseJSON.modelState);
             } else {
@@ -83,35 +81,35 @@
 
             <form id="order-form">
               <div className="form-group">
-                <label className="control-label" htmlFor="title">Title</label>
+                <label className="control-label" htmlFor="title">{Resources.orderForm.title}</label>
                 <input type="text" className="form-control" id="title" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="firstName">First Name</label>
+                <label className="control-label" htmlFor="firstName">{Resources.orderForm.firstName}</label>
                 <input type="text" className="form-control" id="firstName" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="lastName">Last Name</label>
+                <label className="control-label" htmlFor="lastName">{Resources.orderForm.lastName}</label>
                 <input type="text" className="form-control" id="lastName" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="address">Address</label>
+                <label className="control-label" htmlFor="address">{Resources.orderForm.address}</label>
                 <input type="text" className="form-control" id="address" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="houseNumber">House Number</label>
+                <label className="control-label" htmlFor="houseNumber">{Resources.orderForm.houseNumber}</label>
                 <input type="text" className="form-control" id="houseNumber" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="city">City</label>
+                <label className="control-label" htmlFor="city">{Resources.orderForm.city}</label>
                 <input type="text" className="form-control" id="city" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="zipCode">Zip Code</label>
+                <label className="control-label" htmlFor="zipCode">{Resources.orderForm.zip}</label>
                 <input type="text" className="form-control" id="zipCode" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="email">Email address</label>
+                <label className="control-label" htmlFor="email">{Resources.orderForm.email}</label>
                 <input type="email" className="form-control" placeholder="@" id="email" />
               </div>
               <div className="button-area">
