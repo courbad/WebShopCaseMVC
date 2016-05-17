@@ -33,6 +33,12 @@ namespace TryCatch.Web.Shop.Controllers
         }
 
         [HttpGet]
+        public ProductDetails GetDetails(string id)
+        {
+            return _productsBLL.GetDetailsById(id);
+        }
+
+        [HttpGet]
         public int GetTotalCount()
         {
             return _productsBLL.GetTotalCount();

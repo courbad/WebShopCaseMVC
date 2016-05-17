@@ -60,7 +60,7 @@
 
     btnCancelClick: function () {
 
-        if (confirm('Are you sure you want to cancel this order?')) {
+        if (confirm(Resources.orderForm.cancelConfirmMessage)) {
             ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
             $('#product-list-container').fadeIn();
         }

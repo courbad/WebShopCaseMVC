@@ -49,5 +49,15 @@ namespace TryCatch.Lib.BLL
         {
             return _productService.LoadAll().Count();
         }
+
+        public ProductDetails GetDetailsById(string id)
+        {
+            return new ProductDetails()
+            {
+                ImageFileName = "product.jpg",
+                Popularity = (new Random()).Next(100),
+                ProductId = id
+            };
+        }
     }
 }

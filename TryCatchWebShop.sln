@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Lib.Services", "Tr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Lib.BLL", "TryCatch.Lib.BLL\TryCatch.Lib.BLL.csproj", "{B7D25888-5A26-4090-8BC4-C4D33AC1616D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Lib.Resources", "TryCatch.Resources\TryCatch.Lib.Resources.csproj", "{9C4AADC6-5031-4D40-9435-C859ECBD96F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch.Lib.Resources", "TryCatch.Lib.Resources\TryCatch.Lib.Resources.csproj", "{9C4AADC6-5031-4D40-9435-C859ECBD96F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

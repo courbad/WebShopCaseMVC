@@ -287,6 +287,9 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\product.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="readme.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -315,6 +318,7 @@
     </Content>
     <Content Include="Views\Shared\JsResources.cshtml" />
     <Content Include="Scripts\Components\Common\SuccessMessage.jsx" />
+    <Content Include="Scripts\Components\Product\ProductDetails.jsx" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -412,7 +416,7 @@
       <Project>{3cc559d7-6f5d-46a5-8daf-ff55a49a4ea0}</Project>
       <Name>TryCatch.Lib.DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TryCatch.Resources\TryCatch.Lib.Resources.csproj">
+    <ProjectReference Include="..\TryCatch.Lib.Resources\TryCatch.Lib.Resources.csproj">
       <Project>{9c4aadc6-5031-4d40-9435-c859ecbd96f6}</Project>
       <Name>TryCatch.Lib.Resources</Name>
     </ProjectReference>

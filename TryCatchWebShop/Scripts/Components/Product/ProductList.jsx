@@ -35,7 +35,7 @@ var ProductList = React.createClass({
 
         var items = [];
         this.state.items.map((item, i) => {
-            items.push(<ProductListItem item={item} key={i } />);
+            items.push(<ProductListItem item={item} key={i} />);
         });
 
         return (

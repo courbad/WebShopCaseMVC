@@ -61,6 +61,15 @@ namespace TryCatch.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to cancel this order?.
+        /// </summary>
+        public static string CancelConfirmMessage {
+            get {
+                return ResourceManager.GetString("CancelConfirmMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
         public static string FieldAddress {

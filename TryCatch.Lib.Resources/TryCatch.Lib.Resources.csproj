@@ -66,6 +66,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderForm.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductDetails.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Products.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +97,10 @@
     <EmbeddedResource Include="Views\OrderForm.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>OrderForm.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductDetails.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductDetails.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Products.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -12,6 +12,12 @@ select,
 textarea {
   max-width: 280px;
 }
+.product-list .item a {
+  cursor: pointer;
+}
+.product-list .item a:hover {
+  text-decoration: none;
+}
 .paging button {
   margin: 0 5px;
 }
