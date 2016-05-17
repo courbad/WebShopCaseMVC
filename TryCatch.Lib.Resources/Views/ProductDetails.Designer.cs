@@ -61,6 +61,15 @@ namespace TryCatch.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bought by {0} people..
+        /// </summary>
+        public static string PopularityText {
+            get {
+                return ResourceManager.GetString("PopularityText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product Details.
         /// </summary>
         public static string Title {

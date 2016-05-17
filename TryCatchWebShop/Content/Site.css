@@ -18,6 +18,18 @@ textarea {
 .product-list .item a:hover {
   text-decoration: none;
 }
+#product-details-modal .product-details h3 {
+  color: #5bc0de;
+  text-align: center;
+}
+#product-details-modal .product-details h1 {
+  color: crimson;
+}
+#product-details-modal .product-details .image-wrapper img {
+  border: 1px solid #ddd;
+  display: block;
+  margin: 0 auto;
+}
 .paging button {
   margin: 0 5px;
 }

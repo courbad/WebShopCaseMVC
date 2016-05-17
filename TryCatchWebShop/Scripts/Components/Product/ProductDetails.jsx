@@ -23,15 +23,18 @@
                           <div className="product-details">
                               <div><h3>{this.props.product.name}</h3></div>
                               <div className="image-wrapper">
-                                  <img src={"Images/" + this.props.details.imageFileName} alt="this.props.imageFileName"/>
+                                  <img src={"Images/" + this.props.details.imageFileName} alt="this.props.imageFileName" />
                               </div>
-                              <div className="popularity">
-                                  {this.props.details.popularity}
-                              </div>
+                              <div><h1>€&nbsp;{this.props.product.price.toFixed(2)}</h1></div>
                           </div>
                       </div>
                       <div className="modal-footer">
-                          <button type="button" className="btn btn-default" data-dismiss="modal" >{Resources.common.btnClose}</button>
+                          <div className="pull-left">
+                            <span>{Resources.productDetails.popularityText.replace('{0}', this.props.details.popularity)}</span>
+                          </div>
+                          <div className="pull-right">
+                            <button type="button" className="btn btn-default" data-dismiss="modal">{Resources.common.btnClose}</button>
+                          </div>
                       </div>
                     </div>
                   </div>
