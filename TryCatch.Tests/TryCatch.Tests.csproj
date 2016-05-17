@@ -137,7 +137,7 @@
       <Project>{f48a49fa-14d1-4a78-ba05-6a5f0512f583}</Project>
       <Name>TryCatch.Lib.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TryCatchWebShop\TryCatch.Web.Shop.csproj">
+    <ProjectReference Include="..\TryCatch.Web.Shop\TryCatch.Web.Shop.csproj">
       <Project>{ee01eccf-afc3-4929-80a3-54cd1fb76715}</Project>
       <Name>TryCatch.Web.Shop</Name>
     </ProjectReference>
