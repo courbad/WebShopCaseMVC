@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Serialization;
+using NLog;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -16,7 +17,6 @@ namespace TryCatch.Web.Shop
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             FilterConfig.RegisterHttpFilters(GlobalConfiguration.Configuration.Filters);
-
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
@@ -29,6 +29,11 @@ namespace TryCatch.Web.Shop
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
 
+        }
+
+        void Application_Error(object sender, EventArgs e)
+        {
+            Logger.Instance.Error(Server.GetLastError());
         }
     }
 }

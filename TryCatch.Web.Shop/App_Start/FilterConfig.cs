@@ -18,7 +18,5 @@ namespace TryCatch.Web.Shop
         {
             filters.Add(new TryCatchHandleErrorAttribute());
         }
-
-
     }
 }

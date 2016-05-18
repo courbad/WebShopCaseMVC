@@ -12,11 +12,9 @@ namespace TryCatch.Web.Shop.Filters
 {
     public class TryCatchHandleErrorAttribute : ExceptionFilterAttribute
     {
-        protected ILogger _logger = LogManager.GetLogger("textfile");
-
         public override void OnException(HttpActionExecutedContext context)
         {
-            _logger.Error(context.Exception);
+            Logger.Instance.Error(context.Exception);
         }
     }
 }
