@@ -70,9 +70,14 @@ namespace TryCatch.Web.Shop.Tests.BLL
 
             Assert.IsNotNull(outOrder.Products);
             Assert.IsTrue(outOrder.Products.Count() == 3);
-            Assert.AreEqual(inOrder.Products.First().Id, outOrder.Products.First().Id);
-            Assert.AreEqual(inOrder.Products.First().Name, outOrder.Products.First().Name);
-            Assert.AreEqual(inOrder.Products.First().Price, outOrder.Products.First().Price);
+
+            var inProduct = inOrder.Products.OrderBy(p => p.Name).First();
+            var outProduct = outOrder.Products.OrderBy(p => p.Name).First();
+
+            Assert.IsNotNull(inProduct);
+            Assert.AreEqual(inProduct.Id, outProduct.Id);
+            Assert.AreEqual(inProduct.Name, outProduct.Name);
+            Assert.AreEqual(inProduct.Price, outProduct.Price);
 
         }
     }

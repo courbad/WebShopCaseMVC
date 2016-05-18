@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Data.Entity;
 using OrderDTO = TryCatch.Lib.DTO.Order;
 
 namespace TryCatch.Lib.Services
@@ -10,7 +11,10 @@ namespace TryCatch.Lib.Services
         {
             using (var context = new OrdersDbContext())
             {
-                var entity = context.Orders.FirstOrDefault(o => o.Id == id);
+                var entity = context.Orders
+                    .Include(o => o.Products)
+                    .FirstOrDefault(o => o.Id == id);
+
                 return EntityMapper.MapOrderToDto(entity);
             }
         }

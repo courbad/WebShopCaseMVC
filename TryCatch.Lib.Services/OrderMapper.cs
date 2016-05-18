@@ -44,8 +44,8 @@ namespace TryCatch.Lib.Services
         {
             var orderCfg = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<OrderDTO, OrderEntity>();
-                cfg.CreateMap<ProductDTO, ProductEntity>();
+                cfg.CreateMap<OrderEntity, OrderDTO>();
+                cfg.CreateMap<ProductEntity, ProductDTO>();
             });
 
             var orderMapper = orderCfg.CreateMapper();
