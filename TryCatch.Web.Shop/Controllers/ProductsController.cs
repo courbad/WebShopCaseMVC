@@ -17,7 +17,6 @@ namespace TryCatch.Web.Shop.Controllers
         [HttpGet]
         public IEnumerable<Product> GetList(uint offset = 0, uint count = 0)
         {
-            throw new System.Exception("test ex");
             return _productsBLL.GetList((int)offset, (int)count);
         }
 
