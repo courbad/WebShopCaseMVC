@@ -17,11 +17,6 @@ namespace TryCatch.Web.Shop.Filters
         public override void OnException(HttpActionExecutedContext context)
         {
             _logger.Error(context.Exception);
-  
-            //context.Response = new HttpResponseMessage()
-            //{
-                
-            //}
         }
     }
 }

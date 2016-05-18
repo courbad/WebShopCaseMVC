@@ -9,7 +9,7 @@ namespace TryCatch.Web.Shop
         {
             var fullPath = HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["JsResourcesFileLocation"]);
             var generator = new JsResourcesGenerator(fullPath);
-
+            throw new System.Exception("test ex");
             generator.GenerateJsResourcesFile();
         }
     }

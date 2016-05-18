@@ -20,6 +20,8 @@ var ProductList = React.createClass({
             data: { count: 10, offset: (pageNumber - 1) * this.pageSize },
         }).done(function (data) {
             that.setState({ items: data, activePage: pageNumber });
+        }).fail(function (data) {
+            alert('Could not get product data.');
         });
     },
 

@@ -30,11 +30,6 @@ namespace TryCatch.Web.Shop
             config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
 
         }
-
-        protected void Application_Error(object sender, EventArgs e)
-        {
-            Exception exception = Server.GetLastError();
-        }
     }
 }
 
