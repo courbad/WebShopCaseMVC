@@ -16,12 +16,12 @@ namespace TryCatch.Web.Shop.Tests.BLL
         {
             var inOrder = new Order()
             {
-                Address = "addrezs",
+                Address = "test address",
                 City = "riga",
                 Email = "hey@maris.com",
                 FirstName = "maris",
                 LastName = "also maris",
-                HouseNumber = "666",
+                HouseNumber = "n1",
                 Title = "MR",
                 ZipCode = "1010",
             };
@@ -30,11 +30,24 @@ namespace TryCatch.Web.Shop.Tests.BLL
             {
                 new Product()
                 {
-                    //Count = 10,
-                    Id = "MD5something",
-                    Name = "Test product",
+                    Id = "MD5something1",
+                    Name = "Test product1",
                     Price = 99m
-                }
+                },
+
+                new Product()
+                {
+                    Id = "MD5something2",
+                    Name = "Test product2",
+                    Price = 88m
+                },
+
+                new Product()
+                {
+                    Id = "MD5something3",
+                    Name = "Test product3",
+                    Price = 77m
+                },
             };
 
 
@@ -45,7 +58,7 @@ namespace TryCatch.Web.Shop.Tests.BLL
 
 
             Assert.IsNotNull(outOrder);
-            Assert.AreEqual(inOrder.Id, outOrder.Id);
+            Assert.IsNotNull(outOrder.Id);
             Assert.AreEqual(inOrder.Title, outOrder.Title);
             Assert.AreEqual(inOrder.FirstName, outOrder.FirstName);
             Assert.AreEqual(inOrder.LastName, outOrder.LastName);
@@ -56,9 +69,8 @@ namespace TryCatch.Web.Shop.Tests.BLL
             Assert.AreEqual(inOrder.Email, outOrder.Email);
 
             Assert.IsNotNull(outOrder.Products);
-            Assert.IsTrue(outOrder.Products.Count() == 1);
+            Assert.IsTrue(outOrder.Products.Count() == 3);
             Assert.AreEqual(inOrder.Products.First().Id, outOrder.Products.First().Id);
-            //Assert.AreEqual(inOrder.Products.First().Guid, outOrder.Products.First().Guid);
             Assert.AreEqual(inOrder.Products.First().Name, outOrder.Products.First().Name);
             Assert.AreEqual(inOrder.Products.First().Price, outOrder.Products.First().Price);
 

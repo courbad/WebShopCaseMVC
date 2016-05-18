@@ -37,13 +37,13 @@ var Cart = React.createClass({
                         className="btn btn-danger" 
                         disabled={this.state.items.length == 0}
                         data-toggle="modal" data-target="#order-modal">
-                    {Resources.cart.btnCheckOut}
+                    {Resources.cart.checkOut}
                 </button>
                 <button type="button"
                         className="btn btn-default"
                         onClick={this.btnEmptyClick}
                         disabled={this.state.items.length == 0}>
-                    {Resources.cart.btnEmptyCart}
+                    {Resources.cart.empty}
                 </button>
             </div>
         );

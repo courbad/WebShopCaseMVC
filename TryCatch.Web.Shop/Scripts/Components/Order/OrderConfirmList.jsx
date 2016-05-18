@@ -21,10 +21,10 @@
             <table className="table table-condensed order-items-list">
                 <thead>
                     <tr>
-                        <th>{Resources.productList.thName}</th>
-                        <th className="text-right">{Resources.productList.thPrice}</th>
-                        <th className="text-right">{Resources.productList.thVat} {window.vat * 100}&#37;</th>
-                        <th className="text-right">{Resources.productList.thPriceIncVat}</th>
+                        <th>{Resources.products.thName}</th>
+                        <th className="text-right">{Resources.products.thPrice}</th>
+                        <th className="text-right">{Resources.products.thVat} {window.vat * 100}&#37;</th>
+                        <th className="text-right">{Resources.products.thPriceWithVat}</th>
                     </tr>
                 </thead>
                 <tbody>{items}</tbody>

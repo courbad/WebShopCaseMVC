@@ -21,6 +21,8 @@ namespace TryCatch.Web.Shop
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ProductRepositoryConfig.Init();
+            JsResourcesConfig.Init();
+            
             UnityConfig.RegisterComponents();
 
             HttpConfiguration config = GlobalConfiguration.Configuration;
@@ -35,4 +37,5 @@ namespace TryCatch.Web.Shop
         }
     }
 }
+
 

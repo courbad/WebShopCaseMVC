@@ -24,7 +24,7 @@
             Cookies.remove('products');
             window.cart.empty();
             ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(that).parentNode);
-            ReactDOM.render(<SuccessMessage text={Resources.orderForm.successMsg} />, $('.body-content')[0]);
+            ReactDOM.render(<SuccessMessage text={Resources.orderForm.orderSuccessMessage} />, $('.body-content')[0]);
 
         }).always(function (data) {
 
@@ -81,35 +81,35 @@
 
             <form id="order-form">
               <div className="form-group">
-                <label className="control-label" htmlFor="title">{Resources.orderForm.title}</label>
+                <label className="control-label" htmlFor="title">{Resources.orderForm.fieldTitle}</label>
                 <input type="text" className="form-control" id="title" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="firstName">{Resources.orderForm.firstName}</label>
+                <label className="control-label" htmlFor="firstName">{Resources.orderForm.fieldFirstName}</label>
                 <input type="text" className="form-control" id="firstName" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="lastName">{Resources.orderForm.lastName}</label>
+                <label className="control-label" htmlFor="lastName">{Resources.orderForm.fieldLastName}</label>
                 <input type="text" className="form-control" id="lastName" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="address">{Resources.orderForm.address}</label>
+                <label className="control-label" htmlFor="address">{Resources.orderForm.fieldAddress}</label>
                 <input type="text" className="form-control" id="address" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="houseNumber">{Resources.orderForm.houseNumber}</label>
+                <label className="control-label" htmlFor="houseNumber">{Resources.orderForm.fieldHouseNumber}</label>
                 <input type="text" className="form-control" id="houseNumber" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="city">{Resources.orderForm.city}</label>
+                <label className="control-label" htmlFor="city">{Resources.orderForm.fieldCity}</label>
                 <input type="text" className="form-control" id="city" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="zipCode">{Resources.orderForm.zip}</label>
+                <label className="control-label" htmlFor="zipCode">{Resources.orderForm.fieldZip}</label>
                 <input type="text" className="form-control" id="zipCode" />
               </div>
               <div className="form-group">
-                <label className="control-label" htmlFor="email">{Resources.orderForm.email}</label>
+                <label className="control-label" htmlFor="email">{Resources.orderForm.fieldEmail}</label>
                 <input type="email" className="form-control" placeholder="@" id="email" />
               </div>
               <div className="button-area">

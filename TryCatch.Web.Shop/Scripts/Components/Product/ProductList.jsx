@@ -45,8 +45,8 @@ var ProductList = React.createClass({
 
                 <thead>
                     <tr>
-                        <th>{Resources.productList.thName}</th>
-                        <th className="text-right">{Resources.productList.thPriceExVat}</th>
+                        <th>{Resources.products.thName}</th>
+                        <th className="text-right">{Resources.products.thPriceExVat}</th>
                         <th></th>
                     </tr>
                 </thead>

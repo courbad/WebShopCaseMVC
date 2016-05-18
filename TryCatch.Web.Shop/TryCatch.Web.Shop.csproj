@@ -229,6 +229,8 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\JsResourcesConfig.cs" />
+    <Compile Include="Framework\JsResourcesGenerator.cs" />
     <Compile Include="App_Start\ProductRepositoryConfig.cs" />
     <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -316,7 +318,6 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Shared\JsResources.cshtml" />
     <Content Include="Scripts\Components\Common\SuccessMessage.jsx" />
     <Content Include="Scripts\Components\Product\ProductDetails.jsx" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
